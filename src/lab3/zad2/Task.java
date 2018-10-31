@@ -1,20 +1,22 @@
 package lab3.zad2;
 
 public class Task implements Runnable{
-    private int taskId;
-    private PrinterMonitor printMonitor;
+    private int nrWatku;
+    private Monitor_Drukarki printMonitor;
 
-    public Task(int taskId, PrinterMonitor printMonitor){
-        System.out.println("Tworzymy zadanie o id " + taskId);
-        this.taskId = taskId;
+    public Task(int nrWatku, Monitor_Drukarki printMonitor){
+        System.out.println("Tworzymy wątek o numerze " + nrWatku);
+        this.nrWatku = nrWatku;
         this.printMonitor = printMonitor;
     }
 
     public void run(){
-        int printerId;																		//do zadania trzeba przypisac konkretna drukarke
-        System.out.println("Zadanie o id " + this.taskId + " - proba rozpoczecia.");
+
+        System.out.println("Wątek o nr. " + this.nrWatku + " startuje");
+        int printerId;
         printerId = printMonitor.takePrinter();
-        System.out.println("Zadanie o id " + this.taskId + " - zajelo drukarke o id " + printerId);
+        System.out.println("Wątek o nr. " + this.nrWatku + " zajmuje drukarke o id " + printerId);
+
         try{
             Thread.sleep(1000);
         } catch (InterruptedException e){
