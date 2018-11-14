@@ -6,8 +6,8 @@ import java.util.ArrayList;
 public class Main {
 	
 	public static final int M = 500;
-	public static final int K = 100;
-	public static final int P = 100;
+	public static final int K = 10;
+	public static final int P = 10;
 	public static final int B = 2*M;
 	
 	public static void main(String[] args) throws InterruptedException {

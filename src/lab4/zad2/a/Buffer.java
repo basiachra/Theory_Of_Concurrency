@@ -26,8 +26,6 @@ public class Buffer {
 	}
 
 
-    long startPutTime = System.nanoTime();
-
 	public void put(int n, int id){
 		try{
 			lock.lock();
@@ -64,9 +62,6 @@ public class Buffer {
 		}
 	}
 
-    long estimatedPutTime = System.nanoTime() - startPutTime;
-
-    long startGetTime = System.nanoTime();
 	public void take(int cellsToTake, int id){
 		try{
 			lock.lock();
@@ -105,8 +100,6 @@ public class Buffer {
 			e.printStackTrace();
 		}
 	}
-    long estimatedGetTime = System.nanoTime() - startGetTime;
-
 
 	private void printBuffer(){
 		for (int i = 0; i < 2*Main.M; i++)

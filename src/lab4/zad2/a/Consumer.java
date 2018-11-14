@@ -15,7 +15,7 @@ public class Consumer implements Runnable{
 	}
 	
 	public void run(){
-			int rand = new Random().nextInt(Main.M) + 1;
+			int rand = new Random().nextInt(Main.M/2) + 1;
 			System.out.println("Konsument "+ consumerId + " pobiera " + rand + " komórek.");
 
 
